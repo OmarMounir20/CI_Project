@@ -14,7 +14,7 @@ class Sequential:
         for layer in reversed(self.layers):
             grad = layer.backward(grad)
 
-    def train(self, X, Y, loss_fn, optimizer, epochs=10000):
+    def train(self, X, Y, loss_fn, optimizer, epochs=5000):
         for epoch in range(epochs):
             y_pred = self.forward(X)
             loss = loss_fn.forward(Y, y_pred)
