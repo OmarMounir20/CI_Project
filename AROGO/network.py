@@ -25,3 +25,11 @@ class Sequential:
 
             if epoch % 2000 == 0:
                 print(f"Epoch {epoch}, Loss: {loss}")
+
+    def predict(self, X):
+        return self.forward(X)
+    
+    def predict_classes(self, X, threshold=0.5):
+        preds = self.forward(X)
+        return (preds >= threshold).astype(int)
+
